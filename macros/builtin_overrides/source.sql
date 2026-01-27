@@ -40,7 +40,8 @@
   {% set where_exprs = [] %}
 
   {% if is_incremental_run and has_loaded_at_col %}
-      {% set where_exprs = where_exprs + ["(select max(" ~ target_loaded_at_col ~ ") from " ~ this ~ ") < " ~ loaded_at_col] %}
+      {% set default_valid_from = var('dbt_scd2_utils:default_valid_from', '1900-01-01 00:00:00') %}
+      {% set where_exprs = where_exprs + ["(select coalesce(max(" ~ target_loaded_at_col ~ "), '" ~ default_valid_from ~ "'::timestamp) from " ~ this ~ ") < " ~ loaded_at_col] %}
   {% endif %}
 
   {% if exclude_data and has_loaded_at_col %}

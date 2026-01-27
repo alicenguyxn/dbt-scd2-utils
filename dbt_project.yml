@@ -32,6 +32,8 @@ vars:
     created_at_column: _created_at
     # Default valid_to date for current records
     default_valid_to: "2999-12-31 23:59:59"
+    # Default valid_from date for initial incremental loads
+    default_valid_from: "1900-01-01 00:00:00"
     # When true, exclude data that arrived after the dbt run started
     exclude_data_after_run_start: false
     # When true, bring all previous versions of a record in for processing when a change is detected
