@@ -136,8 +136,8 @@
       'valid_from_column': valid_from_col,
       'valid_to_column': valid_to_col,
       'updated_at_column': updated_at_col,
-      'created_at_column': created_at_col,
       'change_type_column': change_type_col,
+      'created_at_column': created_at_col,
       'deleted_at_column': deleted_at_col
   }  %}
 
