@@ -13,8 +13,8 @@
   {%- set valid_to_col = config.get('valid_to_column', dbt_scd2_utils.get_from_object(var('dbt_scd2_utils', {}), 'valid_to_column')) -%}
   {%- set updated_at_col = config.get('updated_at_column', dbt_scd2_utils.get_from_object(var('dbt_scd2_utils', {}), 'updated_at_column')) -%}
   {%- set change_type_col = config.get('change_type_column', dbt_scd2_utils.get_from_object(var('dbt_scd2_utils', {}), 'change_type_column')) -%}
+  {%- set created_at_col = dbt_scd2_utils.get_config_value(config, 'created_at_column', default=dbt_scd2_utils.get_from_object(var('dbt_scd2_utils', {}), 'created_at_column', default=none)) -%}
   {%- set deleted_at_col = dbt_scd2_utils.get_config_value(config, 'deleted_at_column', default=dbt_scd2_utils.get_from_object(var('dbt_scd2_utils', {}), 'deleted_at_column', default=none)) -%}
-  {%- set created_at_col = config.get('created_at_column', dbt_scd2_utils.get_from_object(var('dbt_scd2_utils', {}), 'created_at_column')) -%}
 
   {%- set update_all_previous_records = dbt_scd2_utils.get_from_object(var('dbt_scd2_utils', {}), 'update_all_previous_records', default=true) -%}
 
